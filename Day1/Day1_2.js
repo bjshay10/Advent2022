@@ -10,7 +10,6 @@ function TotalCalories (array) {
 
 }
 
-
 fs.readFile('input.txt', function(err, data){
     if(err) throw err
 
