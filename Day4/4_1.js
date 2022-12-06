@@ -21,19 +21,23 @@ fs.readFile('.\\Day4\\input-test.txt', function(err, data){
         //make string visualizations???
         temp2 = elf1.toString().split('-')
         for (j=parseInt(temp2[0]); j<=parseInt(temp2[1]); j++) {
-            string1 = string1 + j + ','
+            string1 = ',' + string1 + j
         }
         console.log(string1)
 
         temp3 = elf2.toString().split('-')
         for(k=parseInt(temp3[0]); k<=parseInt(temp3[1]); k++) {
-            
+            string2 = ',' + string2 + j              
         }
 
 
-        
-        //compare arrays....
-        
+        //if string1 length is 2
+        if (string1.length === 2){
+            //compare string 1 value to elf2[0] <= string1.substring
+        }
+        //if string2 length is 2
+        //if string1 contains string2
+        //if string2 contains string1
 
 
        
@@ -44,8 +48,6 @@ fs.readFile('.\\Day4\\input-test.txt', function(err, data){
         elf2 = []
         temp = []
         temp2 = []
-        arrayElf1 = []
-        arrayElf2 = []
     }
 
     console.log(`COMPLETE COUNT = ${count}`)
