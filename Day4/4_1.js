@@ -4,8 +4,8 @@ var elf1, elf2
 var string1 = '', string2 = ''
 var count = 0
 
-//fs.readFile('.\\Day4\\input-test.txt', function(err, data){
-fs.readFile('.\\Day4\\input.txt', function(err, data){
+fs.readFile('.\\Day4\\input-test.txt', function(err, data){
+//fs.readFile('.\\Day4\\input.txt', function(err, data){
     if(err) throw err
     //HOW MANY ASSIGNMENT PAIS FULLY CONTAIN THE OTHER
 
@@ -20,44 +20,23 @@ fs.readFile('.\\Day4\\input.txt', function(err, data){
 
         //make string visualizations???
         temp2 = elf1.toString().split('-')
-        for (j=temp2[0]; j<=temp2[1]; j++) {
-            string1 += j.toString()    
+        for (j=parseInt(temp2[0]); j<=parseInt(temp2[1]); j++) {
+            string1 = string1 + j + ','
         }
+        console.log(string1)
 
-        //console.log(string1)
-        
         temp3 = elf2.toString().split('-')
-        for(k=temp3[0]; k<=temp3[1]; k++) {
-            string2 += k.toString()
+        for(k=parseInt(temp3[0]); k<=parseInt(temp3[1]); k++) {
+            
         }
-        
-        //console.log(string2)
 
-        //check if string1 contains string2
-        if ((string1.length === 1) || (string2.length === 1)) {
-            if (string1.length === 1) {
-                temp3 = elf2.toString().split('-')
-                if (( parseInt(temp3[0]) <= parseInt(string1)) && (parseInt(temp3[1]) >= parseInt(string1))) { 
-                    console.log(`string1 is smaller ${i} - ${temp3[0]} <= ${string1} <= ${temp3[1]}: ${elf1} ${elf2}`)
-                    count++
-                }
-            }
-            if (string2.length === 1) {
-                temp4 = elf1.toString().split('-')
-                if ((parseInt(temp4[0]) <= parseInt(string2)) && (parseInt(temp4[1]) >= parseInt(string2))) { 
-                    console.log(`string2 is smaller ${i} - ${temp4[0]} <= ${string2} <= ${temp4[1]}: ${elf1} ${elf2}`)
-                    count++
-                }   
-            }
-        } else {
-            if (string1.indexOf(string2) > -1){
-                count++
-                //console.log(`i=${i} - S1 ${elf1} constains S2 ${elf2}`)
-            } else if (string2.indexOf(string1) > -1){
-                count++
-                //console.log(`i=${i} - S2 ${elf2} contains S1 ${elf1}`)
-            }
-        }
+
+        
+        //compare arrays....
+        
+
+
+       
 
         string1 = ''
         string2 = ''
@@ -65,6 +44,8 @@ fs.readFile('.\\Day4\\input.txt', function(err, data){
         elf2 = []
         temp = []
         temp2 = []
+        arrayElf1 = []
+        arrayElf2 = []
     }
 
     console.log(`COMPLETE COUNT = ${count}`)
