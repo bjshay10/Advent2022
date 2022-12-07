@@ -52,10 +52,10 @@ fs.readFile('.\\Day4\\input.txt', function(err, data){
         } else {
             if (string1.indexOf(string2) > -1){
                 count++
-                //console.log(`i=${i} - S1 ${elf1} constains S2 ${elf2}`)
+                console.log(`i=${i} - S1 ${elf1} constains S2 ${elf2}`)
             } else if (string2.indexOf(string1) > -1){
                 count++
-                //console.log(`i=${i} - S2 ${elf2} contains S1 ${elf1}`)
+                console.log(`i=${i} - S2 ${elf2} contains S1 ${elf1}`)
             }
         }
 
