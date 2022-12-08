@@ -7,5 +7,7 @@ fs.readFile('.\\Day6\\input-test.txt', function(err, data){
 
     console.log('STARTING')
 
+    
+
     console.log(`COMPLETE`)
 })
