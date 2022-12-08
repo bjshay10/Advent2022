@@ -62,31 +62,32 @@ function moveCrate(amnt, src, dest) {
         } else if (parseInt(src) === 9){
             tempItm = crateArray9.pop()
         }
-        console.log(tempItm)
+        //console.log(tempItm)
         tempArray.push(tempItm)
     }
 
     tempArray.reverse()
-    console.log(tempArray)
-
-    if (parseInt(dest) === 1) {
-        crateArray1.push(tempArray)
-    } else if (parseInt(dest) === 2) {
-        crateArray2.push(tempArray)
-    } else if (parseInt(dest) === 3) {
-        crateArray3.push(tempArray)    
-    } else if (parseInt(dest) === 4) {
-        crateArray4.push(tempArray)
-    } else if (parseInt(dest) === 5) {
-        crateArray5.push(tempArray)
-    } else if (parseInt(dest) === 6) {
-        crateArray6.push(tempArray)
-    } else if (parseInt(dest) === 7) {
-        crateArray7.push(tempArray)
-    } else if (parseInt(dest) === 8) {
-        crateArray8.push(tempArray)
-    } else if (parseInt(dest) === 9) {
-        crateArray9.push(tempArray)
+    //console.log(tempArray)
+    for (b=0; b<tempArray.length;b++) {
+        if (parseInt(dest) === 1) {
+            crateArray1.push(tempArray[b])
+        } else if (parseInt(dest) === 2) {
+            crateArray2.push(tempArray[b])
+        } else if (parseInt(dest) === 3) {
+            crateArray3.push(tempArray[b])    
+        } else if (parseInt(dest) === 4) {
+            crateArray4.push(tempArray[b])
+        } else if (parseInt(dest) === 5) {
+            crateArray5.push(tempArray[b])
+        } else if (parseInt(dest) === 6) {
+            crateArray6.push(tempArray[b])
+        } else if (parseInt(dest) === 7) {
+            crateArray7.push(tempArray[b])
+        } else if (parseInt(dest) === 8) {
+            crateArray8.push(tempArray[b])
+        } else if (parseInt(dest) === 9) {
+            crateArray9.push(tempArray[b])
+        }
     }
 }
 
