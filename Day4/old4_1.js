@@ -23,7 +23,7 @@ fs.readFile('.\\Day4\\input.txt', function(err, data){
         //console.log(`temp2 ${temp2}`)
         //console.log(`temp2[0] ${temp2[0]}, temp2[1] ${temp2[1]}`)
         for (j=parseInt(temp2[0]); j<=parseInt(temp2[1]); j++) {
-            string1 += j.toString()    
+            string1 = string1 + ', '+ j.toString()    
         }
 
         //console.log(elf1)
@@ -31,13 +31,13 @@ fs.readFile('.\\Day4\\input.txt', function(err, data){
         
         temp3 = elf2.toString().split('-')
         for(k=parseInt(temp3[0]); k<=parseInt(temp3[1]); k++) {
-            string2 += k.toString()
+            string2 = string2 + ', ' + k.toString()
         }
         
         //console.log(string2)
 
         //check if string1 contains string2
-        if ((string1.length === 1) || (string2.length === 1)) {
+        /*if ((string1.length === 1) || (string2.length === 1)) {
             if (string1.length === 1) {
                 temp3 = elf2.toString().split('-')
                 if (( parseInt(temp3[0]) <= parseInt(string1)) && (parseInt(temp3[1]) >= parseInt(string1))) { 
@@ -52,7 +52,7 @@ fs.readFile('.\\Day4\\input.txt', function(err, data){
                     count++
                 }   
             }
-        } else {
+        } else {*/
             if (string1.indexOf(string2) > -1){
                 count++
                 //console.log(`string1 ${i}`)
@@ -60,7 +60,7 @@ fs.readFile('.\\Day4\\input.txt', function(err, data){
                 count++
                 //console.log(`string2 ${i} ${string1} - ${string2}`)
             }
-        }
+        //}
 
         string1 = ''
         string2 = ''
