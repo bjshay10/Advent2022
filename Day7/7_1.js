@@ -45,6 +45,7 @@ fs.readFile('.\\Day7\\input-test.txt', function(err, data){
             console.log(dirArray)
         } else if ((cmd[1] === 'cd') && (cmd[2] === '..')) {
             curDir = prevDir
+            prevDir = '???'
         }
         
         //if cmd = cd set curDir to next directory
