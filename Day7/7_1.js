@@ -38,6 +38,13 @@ fs.readFile('.\\Day7\\input-test.txt', function(err, data){
         // if ####, abc.txt then that is a file size and file name
         // cd .. move out one level
         // cd / goes to the root level
+
+        //so if cd change to appropriate directory go to next command
+        // if ls start listing the contents of the dir until get to another cd command
+        // if file add size to what ever directory we are in add to dir total
+        // cd (dirName recursive to another dir)
+        // if cd .. you are finished with dir check size if 100000 or less push to count array return size to previous dir
+
         
     }
 
