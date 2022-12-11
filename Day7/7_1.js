@@ -1,14 +1,8 @@
 var fs = require('fs')
 
 //[dir, size, parentDir]
-var dirArray = []
-var ttlSize = 0
-var target = 100000
-var allDirArray = []
-var curDir = ''
-var prevDir = ''
-var curDirSize = 0
 var cmd = ''
+var ttlSize = 0
 
 //test size = 95437
 
@@ -31,27 +25,20 @@ fs.readFile('.\\Day7\\input-test.txt', function(err, data){
     var array = data.toString().split('\r\n')
 
     //loop through array
-    for (i=0; i<1; i++){
-        
-        console.log(`Current command is ${array[i]}`)
-                cmd = array[i].toString().split(' ')
-        
+    for (i=0; i<array.length; i++){
+        cmd = array[i].toString().split(' ')
         console.log(cmd)
-        if ((cmd[1] === 'cd') && (cmd[2] !== '..')) {
-            prevDir = curDir
-            curDir = cmd[2]
-
-            dirArray.push([cmd[2],0,prevDir])
-            console.log(dirArray)
-        } else if ((cmd[1] === 'cd') && (cmd[2] === '..')) {
-            curDir = prevDir
-            prevDir = '???'
-        }
         
-        //if cmd = cd set curDir to next directory
-        //if ls loop through until back to cd
-        //if .. move back a dir
 
+
+        //if cd (dirName)
+        //if ls ---following commands until a cd .. lists directory contents
+            //mayneed recursive array
+        // if dir abc current dir contains a dir called abc
+        // if ####, abc.txt then that is a file size and file name
+        // cd .. move out one level
+        // cd / goes to the root level
+        
     }
 
     console.log(`COMPLETE Dir size = ${ttlSize}`)
