@@ -11,9 +11,9 @@ fs.readFile('.\\Day8\\input-test.txt', function(err, data){
     console.log(array)
 
     for (a=0; a<array.length; a++){
-        
     }
 
+    console.log(treeArray)
 
 
     console.log(`COMPLETE`)
