@@ -11,11 +11,7 @@ fs.readFile('.\\Day8\\input-test.txt', function(err, data){
     console.log(array)
 
     for (a=0; a<array.length; a++){
-        var tempArray = array[a].toString().split()
-        for (b=0; b<tempArray.length; b++) {
-            treeArray[a,b].push(tempArray[b])
-        }
-        console.log(treeArray)
+        
     }
 
 
