@@ -3,6 +3,9 @@ var fs = require('fs')
 //[dir, size, parentDir]
 var cmd = ''
 var ttlSize = 0
+var dirArray = []  //dir name, dirSize, contains []
+var dirOrder = []
+var currDir = ''
 
 //test size = 95437
 
@@ -26,24 +29,42 @@ fs.readFile('.\\Day7\\input-test.txt', function(err, data){
 
     //loop through array
     for (i=0; i<array.length; i++){
+    //for (i=0; i<3; i++){
         cmd = array[i].toString().split(' ')
-        console.log(cmd)
+        //console.log(cmd)
         
+        if (cmd[0].toString() === '$'){
+            //console.log(`LINE ${i} is a command`)
+            //cd x change dir
+            //cd / go to root (1st line)
+            //cd .. move back a dir
+            //ls lists sub dir 
+            if ((cmd[1].toString() === 'cd') && (cmd[2].toString() !== '..')) {
+                //change dir
+                currDir = cmd[2].toString()
+                dirOrder.push(cmd[2].toString())
+            } else if ((cmd[1].toString() === 'cd') && (cmd[2].toString() === '..'))  {
+                currDir = dirOrder.pop().toString()
+            } else if ((cmd[1].toString() === 'ls')) {
+                var tempContains = ''
+                for (j=i; j<array.length; j++){
+                    var content = array[j].toString().split(' ')
+                    //console.log(content)
+                    if (content[0].toString === '$') {
+                        break
+                    } else {
+                        if (content[0].toString() === 'dir') {
+                            tempContains = tempContains + ',' + content[1].toString()
+                        } else {
+                            
+                        }
+                    }
+                }
+            }
+        } else {
+            //nothing to do I think
+        }
 
-
-        //if cd (dirName)
-        //if ls ---following commands until a cd .. lists directory contents
-            //mayneed recursive array
-        // if dir abc current dir contains a dir called abc
-        // if ####, abc.txt then that is a file size and file name
-        // cd .. move out one level
-        // cd / goes to the root level
-
-        //so if cd change to appropriate directory go to next command
-        // if ls start listing the contents of the dir until get to another cd command
-        // if file add size to what ever directory we are in add to dir total
-        // cd (dirName recursive to another dir)
-        // if cd .. you are finished with dir check size if 100000 or less push to count array return size to previous dir
 
         
     }
