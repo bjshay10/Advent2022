@@ -5,7 +5,7 @@ var cmd = ''
 var ttlSize = 0
 var dirArray = []  //dir name, dirSize, contains []
 var dirOrder = []
-var currDir = ''
+var array = []
 
 //test size = 95437
 
@@ -18,6 +18,18 @@ var currDir = ''
 // 123 abc means that the current directory contains a file named abc with size 123.
 // dir xyz means that the current directory contains a directory named xyz.
 
+function parseCmdArray(cmdArray) {
+    let currDir = ''
+    let currTTL = 0
+    //if cd dirname change dir to look for info
+    //lf ls calculate directory values
+        // loop through array to find dir value
+        // if dir call parseCmdArray with subset array
+        // if ##### file name add #### to currArray ttl
+    // if cd .. return to revious array item
+
+    return currTTL
+}
 
 fs.readFile('.\\Day7\\input-test.txt', function(err, data){
 //fs.readFile('.\\Day7\\input.txt', function(err, data){
@@ -25,49 +37,9 @@ fs.readFile('.\\Day7\\input-test.txt', function(err, data){
 
     console.log('STARTING')
 
-    var array = data.toString().split('\r\n')
+    array = data.toString().split('\r\n')
 
-    //loop through array
-    for (i=0; i<array.length; i++){
-    //for (i=0; i<3; i++){
-        cmd = array[i].toString().split(' ')
-        //console.log(cmd)
-        
-        if (cmd[0].toString() === '$'){
-            //console.log(`LINE ${i} is a command`)
-            //cd x change dir
-            //cd / go to root (1st line)
-            //cd .. move back a dir
-            //ls lists sub dir 
-            if ((cmd[1].toString() === 'cd') && (cmd[2].toString() !== '..')) {
-                //change dir
-                currDir = cmd[2].toString()
-                dirOrder.push(cmd[2].toString())
-            } else if ((cmd[1].toString() === 'cd') && (cmd[2].toString() === '..'))  {
-                currDir = dirOrder.pop().toString()
-            } else if ((cmd[1].toString() === 'ls')) {
-                var tempContains = ''
-                for (j=i; j<array.length; j++){
-                    var content = array[j].toString().split(' ')
-                    //console.log(content)
-                    if (content[0].toString === '$') {
-                        break
-                    } else {
-                        if (content[0].toString() === 'dir') {
-                            tempContains = tempContains + ',' + content[1].toString()
-                        } else {
-                            
-                        }
-                    }
-                }
-            }
-        } else {
-            //nothing to do I think
-        }
-
-
-        
-    }
-
+    ttlSize = parseCmdArray(array)
+    
     console.log(`COMPLETE Dir size = ${ttlSize}`)
 })
