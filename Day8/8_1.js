@@ -63,7 +63,7 @@ fs.readFile('.\\Day8\\input-test.txt', function(err, data){
                     //var colResult = checkCol(colArray, currTree)
 
 
-                    for (c=0; c<colArray.length; c++){
+                    for (c=1; c<colArray.length-1; c++){
                         if (colArray[c] < currTree) {
                             visible++
                             tempVis = 'Y'
@@ -83,8 +83,8 @@ fs.readFile('.\\Day8\\input-test.txt', function(err, data){
                         rowArray.push(treeArray[a][d])
                     }
 
-                    for(e=0; e<rowArray.length; e++) {
-                        console.log(`Current Tree ${currTree} vs ${rowArray[e]}`)
+                    for(e=1; e<rowArray.length-1; e++) {
+                        //console.log(`Current Tree ${currTree} vs ${rowArray[e]}`)
                         if (rowArray[e] < currTree) {
                             visible++
                             tempRVis='Y'
